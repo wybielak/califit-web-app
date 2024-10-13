@@ -12,7 +12,7 @@ export default observer(function Auth() {
                 <div className='h-halfscreen flex flex-col flex-nowrap justify-center'>
                     <h1 className='mb-0 mt-5 text-3xl font-bold text-gradient'>CaliFit 💪</h1>
                     <p className='my-4'>
-                        Rusz dupę! Nie ma, że nie
+                        Rusz dupę! Nie ma, że nie.
                     </p>
                     <div>
                         <h4 className='text-center mt-8 mx-2 mb-4 font-bold'>Zaloguj się</h4>
