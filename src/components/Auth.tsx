@@ -16,7 +16,7 @@ export default observer(function Auth() {
                     </p>
                     <div>
                         <h4 className='text-center mt-8 mx-2 mb-4 font-bold'>Zaloguj się</h4>
-                        <button className='h-10 m-auto w-64 p-2 cursor-pointer flex items-center justify-center bg-dark text-light rounded' onClick={appStorage.signInWithGoogle}>
+                        <button className='h-10 m-auto w-64 p-2 cursor-pointer flex items-center justify-center bg-dark text-light rounded' type='button' onClick={appStorage.signInWithGoogle}>
                             <div className='flex flex-row flex-nowrap items-center justify-center'>
                                 <div className='mr-2 bg-white border-white border-2 rounded'>
                                     <div className='google-icon'></div>

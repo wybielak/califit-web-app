@@ -27,7 +27,14 @@ export default observer(function Profile() {
                     <p className='mb-7'>{auth!.currentUser!.email}</p>
                 </div>
 
-                <NavLink to='/'><button className='m-4 mb-20 h-10 p-2 cursor-pointer bg-dark text-light rounded' onClick={appStorage.logOut}>Wyloguj</button></NavLink>
+                <div className='mb-7 flex flex-col items-center justify-center'>
+                  <button className='mb-2 bg-dark w-52 h-10 flex items-center justify-center border border-transparent rounded-md' type='button' onClick={() => appStorage.beginNewWorkout()}>
+                    Rozpocznij nowy trening
+                  </button>
+                  <p className='text-center'>Rozpoczęcie nowego treningu usuwa wszystkie ćwiczenia z podglądu treningu.</p>
+                </div>
+
+                <NavLink to='/'><button className='m-4 mb-20 h-10 p-2 cursor-pointer bg-dark text-light rounded' type='button' onClick={appStorage.logOut}>Wyloguj</button></NavLink>
 
             </div>
             <BottomMenu />

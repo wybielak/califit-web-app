@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -26,6 +37,10 @@ body::-webkit-scrollbar {
   height: 20px;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/flashback-57797.appspot.com/o/google.webp?alt=media&token=3764b61d-18eb-470e-a56b-b8eabd4371ed');
   background-size: contain;
+}
+
+.mt--10 {
+  margin-top: -27px;
 }
 
 .h-halfscreen {
@@ -55,6 +70,19 @@ body::-webkit-scrollbar {
   background-image: url('');
 }
 
+.border-gradient {
+  position: relative;
+  background: linear-gradient(#242424, #242424) padding-box, 
+  linear-gradient(to right, #d8816f, #e48d6d, #ee996b, #f6a769, #fcb667) border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+}
+
+.border-good {
+  border: 2px solid #00c896;
+  border-radius: 15px;
+}
+
 .text-gradient {
   background: linear-gradient(to right, #d8816f, #e48d6d, #ee996b, #f6a769, #fcb667);
   background-clip: text;
@@ -63,4 +91,24 @@ body::-webkit-scrollbar {
 
 .text-fade {
   background: linear-gradient(180deg, #242424, #24242400);
+}
+
+.text-fade-rev {
+  background: linear-gradient(0deg, #242424, #24242400);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+
+.dialog {
+  z-index: 2;
+  position: relative;
 }
