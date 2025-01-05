@@ -20,14 +20,14 @@ export default observer(function Exercise({ id, name, count, goal, unit }: Texer
 
     return (
         <>
-            <div className={`w-80 flex flex-col items-center justify-center m-2 p-4 ${count <= goal ? "border-gradient" : "border-good"}`}>
+            <div className={`w-80 flex flex-col items-center justify-center m-2 p-4 ${count < goal ? "border-gradient" : "border-good"}`}>
                 <div className="w-full flex flex-row justify-between">
                     <h2 className="mb-2 text-xl font-semibold" >{name}</h2>
-                    {count <= goal ?
+                    {count < goal ?
                         <span className="flex flex-row flex-nowrap justify-center items-start">
-                            <button className="bg-dark w-8 h-8 flex items-center justify-center border border-transparent rounded-md" type='button' onClick={() => appStorage.decrease(id, count, increaseCount)} ><FaMinus /></button>
+                            <button className="bg-dark w-8 h-8 flex items-center justify-center border border-transparent rounded-md" type='button' onClick={() => {appStorage.decrease(id, count, increaseCount); setIncreaseCount(1)}} ><FaMinus /></button>
                             <input className="mx-1 bg-dark w-8 h-8 rounded-md text-light text-center" type="number" value={increaseCount} onChange={(e) => { setIncreaseCount(Number(e.target.value)) }} />
-                            <button className="bg-dark w-8 h-8 flex items-center justify-center border border-transparent rounded-md" type='button' onClick={() => appStorage.increase(id, count, increaseCount)} ><FaPlus /></button>
+                            <button className="bg-dark w-8 h-8 flex items-center justify-center border border-transparent rounded-md" type='button' onClick={() => {appStorage.increase(id, count, increaseCount); setIncreaseCount(1)}} ><FaPlus /></button>
                         </span>
                         : <h2 className="mb-2 text-xl font-semibold text-good" >Ukończono 🎉</h2>}
                 </div>

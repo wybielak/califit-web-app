@@ -59,11 +59,9 @@ export default class AppStorage {
         const data = await getDocs(myExercisesRef)
         const filteredData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id } as Texercise))
 
-
         this.setExercises(filteredData)
 
         console.log('Pobrano cwiczenia')
-
     }
 
     increase = async (id: string, oldval: number, increaseCount: number) => {
